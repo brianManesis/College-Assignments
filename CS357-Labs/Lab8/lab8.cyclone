@@ -1,0 +1,50 @@
+graph G{
+    
+    int colorA where colorA>=0 && colorA<=2; 
+    int colorB where colorB>=0 && colorB<=2; 
+    int colorC where colorC>=0 && colorC<=2; 
+    int colorD where colorD>=0 && colorD<=2; 
+    int colorE where colorE>=0 && colorE<=2; 
+    int colorF where colorF>=0 && colorF<=2; 
+    int colorG where colorG>=0 && colorG<=2; 
+    int colorH where colorH>=0 && colorH<=2; 
+    int colorI where colorI>=0 && colorI<=2; 
+    int colorJ where colorJ>=0 && colorJ<=2;
+
+    abstract start node S { }
+    abstract final node A { }
+    abstract final node B { }
+    abstract final node C { }
+    abstract final node D { }
+    abstract final node E { }
+    abstract final node F { }
+    abstract final node G { }
+    abstract final node H { }
+    abstract final node I { }
+    abstract final node J { }
+
+    edge { S-> + }
+    edge { A <-> B,C,F}
+    edge { B <-> G,D}
+    edge { D <-> I,E}
+    edge { E <-> J,C}
+    edge { C <-> H}
+    edge { F <-> I,J}
+    edge { G <-> H,J}
+    edge { I <-> H}
+
+    goal{
+        assert always (colorA != colorB && colorA!= colorC && colorA != colorF);
+        assert always (colorA != colorB && colorA!= colorC && colorA != colorF);
+        assert always (colorB != colorG && colorB != colorD);
+        assert always (colorC != colorH);
+        assert always (colorD != colorI && colorD != colorE);
+        assert always(colorE != colorJ && colorE != colorC);
+        assert always (colorF != colorI && colorF != colorJ);
+        assert always (colorG != colorH && colorG != colorJ);
+        assert always (colorI != colorH);
+        let path = (A^{1}) && (B^{1}) && (C^{1}) && (D^{1}) && (E^{1}) && (F^{1}) && (G^{1}) && (H^{1}) && (I^{1}) && (J^{1});
+        check for 10 condition (path)
+    }
+
+}

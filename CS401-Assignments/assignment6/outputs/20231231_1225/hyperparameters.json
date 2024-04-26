@@ -1,0 +1,1 @@
+{"dim_embedding":32,"model":"TransformersLite.TransformerClassifier","tokenizer":"none","seed":314159,"nlabels":5,"pdrop":0.1,"trainable parameters":238848}

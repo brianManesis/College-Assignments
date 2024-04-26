@@ -1,0 +1,649 @@
+<html>
+    <head>
+        <style>
+            /*
+              All styling found or inspired from w3schools
+            */
+    
+          body{
+              font-family: Arial, Helvetica, sans-serif;
+              background-color: #f2f2f2;
+          }
+          input[type=text]{
+              width: 30%;
+              padding: 8px ;
+              margin: 8px 0;
+              display: inline-block;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+            }
+          label{
+              font-family: Arial, Helvetica, sans-serif;
+          }
+          #title{
+              width: 10%;
+              padding: 5px ;
+              margin: 8px 0;
+              display: inline-block;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+          }
+          div {
+              border-radius: 5px;
+              padding: 5px;
+            }
+            button{
+              background-color: #4CAF50; 
+              border: none;
+              color: white;
+              padding: 15px 32px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+            }
+            button:active {
+              background-color: #3e8e41;
+              box-shadow: 0 5px #666;
+              transform: translateY(4px);
+            }
+            textarea{
+              width: 50%;
+            }
+         </style>
+          <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+        </head>
+    
+        <body>
+            <h1>Create</h1>
+            <div id = "Create">
+                <form id="UserPersonal" class="form-horizontal">
+                    <fieldset>
+                    
+                    <!-- Form Name -->
+                    <legend>Personal</legend>
+                    
+                    <!-- Text input-->
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" for="title">Title</label>  
+                      <div class="col-md-2">
+                      <input id="title" name="title" type="text" placeholder="" class="form-control input-md" size= "4";>
+                        
+                      </div>
+                    </div>
+                    
+                    <!-- Text input-->
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" for="firstName">First Name(s)</label>  
+                      <div class="col-md-4">
+                      <input id="firstName" name="firstName" type="text" placeholder="" class="form-control input-md">
+                        
+                      </div>
+                    </div>
+                    
+                    <!-- Text input-->
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" for="surname">Surname</label>  
+                      <div class="col-md-4">
+                      <input id="surname" name="surname" type="text" placeholder="" class="form-control input-md">
+                        
+                      </div>
+                    </div>
+                    
+                    <!-- Text input-->
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" for="mobile">Mobile</label>  
+                      <div class="col-md-4">
+                      <input id="mobile" name="mobile" type="text" placeholder="" class="form-control input-md">
+                        
+                      </div>
+                    </div>
+                    
+                    <!-- Text input-->
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" for="email">Email Address</label>  
+                      <div class="col-md-4">
+                      <input id="email" name="email" type="text" placeholder="" class="form-control input-md">
+                        
+                      </div>
+                    </div>
+                    
+                    </fieldset>
+                    </form>
+                    
+                <form id="Address">
+                    <fieldset>
+                    
+                    <!-- Form Name -->
+                    <legend>Address</legend>
+                    
+                    <!-- Text input-->
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" for="address1">Address Line 1</label>  
+                      <div class="col-md-4">
+                      <input id="address1" name="address1" type="text" placeholder="" class="form-control input-md">
+                        
+                      </div>
+                    </div>
+                    
+                    <!-- Text input-->
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" for="address2">Address Line 2</label>  
+                      <div class="col-md-4">
+                      <input id="address2" name="address2" type="text" placeholder="" class="form-control input-md">
+                        
+                      </div>
+                    </div>
+                    
+                    <!-- Text input-->
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" for="town">Town</label>  
+                      <div class="col-md-4">
+                      <input id="town" name="town" type="text" placeholder="" class="form-control input-md">
+                        
+                      </div>
+                    </div>
+                    
+                    <!-- Text input-->
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" for="County/City">County/City</label>  
+                      <div class="col-md-4">
+                      <input id="CountyCity" name="CountyCity" type="text" placeholder="" class="form-control input-md">
+                        
+                      </div>
+                    </div>
+                    
+                    <!-- Text input-->
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" for="Eircode">Eircode</label>  
+                      <div class="col-md-4">
+                      <input id="Eircode" name="Eircode" type="text" placeholder="" class="form-control input-md">
+                        
+                      </div>
+                    </div>
+                    
+                    </fieldset>
+                    </form>
+    
+    
+                    <!--Shipping Address Form-->
+                    <form id="ShippingAddress">
+                      <fieldset>
+                      
+                      <!-- Form Name -->
+                      <legend>Shipping Address</legend>
+                      
+                      <!-- Text input-->
+                      <div class="form-group">
+                        <label class="col-md-4 control-label" for="address1">Address Line 1</label>  
+                        <div class="col-md-4">
+                        <input id="Saddress1" name="address1" type="text" placeholder="" class="form-control input-md">
+                          
+                        </div>
+                      </div>
+                      
+                      <!-- Text input-->
+                      <div class="form-group">
+                        <label class="col-md-4 control-label" for="address2">Address Line 2</label>  
+                        <div class="col-md-4">
+                        <input id="Saddress2" name="address2" type="text" placeholder="" class="form-control input-md">
+                          
+                        </div>
+                      </div>
+                      
+                      <!-- Text input-->
+                      <div class="form-group">
+                        <label class="col-md-4 control-label" for="town">Town</label>  
+                        <div class="col-md-4">
+                        <input id="Stown" name="town" type="text" placeholder="" class="form-control input-md">
+                          
+                        </div>
+                      </div>
+                      
+                      <!-- Text input-->
+                      <div class="form-group">
+                        <label class="col-md-4 control-label" for="SCountyCity">County/City</label>  
+                        <div class="col-md-4">
+                        <input id="SCountyCity" name="SCountyCity" type="text" placeholder="" class="form-control input-md">
+                          
+                        </div>
+                      </div>
+                      
+                      <!-- Text input-->
+                      <div class="form-group">
+                        <label class="col-md-4 control-label" for="Eircode">Eircode</label>  
+                        <div class="col-md-4">
+                        <input id="SEircode" name="Eircode" type="text" placeholder="" class="form-control input-md">
+                          
+                        </div>
+                      </div>
+                      
+                      </fieldset>
+                      </form>
+                      <br>
+                    <!-- Shipping Checkboxe -->
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" for="isShipping">Same Shipping Address</label>
+                      <div class="col-md-4">
+                      <div class="checkbox">
+                        <label for="isShippingStatus">
+                          <input type="checkbox" name="isShipping" id="isShippingStatus" value="1">
+                          yes
+                        </label>
+                      </div>
+                      </div>
+                      <button id="CreateButton">submit</button>
+            </div>
+    
+            <div id="Retrieve">
+              <h1>Retrieve</h1>
+              <br>
+              <button id="RetrieveButton">search</button>
+              <br><br>
+              <textarea id="searchResultBox"></textarea>
+          </div>
+          <br>
+          <div id="Update">
+              <h1>Update</h1>
+              <br>
+              <label>CustomerID</label>  
+              <input id="UcustomerID"type="text" placeholder="">
+              <form class="form-horizontal">
+                <fieldset>
+                
+                <!-- Form Name -->
+              <legend>Personal</legend>
+    
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="Uphone">Phone</label>  
+                <div class="col-md-4">
+                <input id="Uphone" name="Uphone" type="text" placeholder="" class="form-control input-md">
+                  
+                </div>
+              </div>
+    
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="Uemail">Email Address</label>  
+                <div class="col-md-4">
+                <input id="Uemail" name="Uemail" type="text" placeholder="" class="form-control input-md">
+                  
+                </div>
+              </div>
+    
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="Utitle">Title</label>  
+                <div class="col-md-4">
+                <input id="Utitle" name="Utitle" type="text" placeholder="" class="form-control input-md">
+                  
+                </div>
+              </div>
+    
+              </fieldset>
+              </form>
+              <br>
+              <form id="UAddress">
+                <fieldset>
+                
+                <!-- Form Name -->
+                <legend>Address</legend>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Uaddress1">Address Line 1</label>  
+                  <div class="col-md-4">
+                  <input id="Uaddress1" name="Uaddress1" type="text" placeholder="" class="form-control input-md">
+                    
+                  </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Uaddress2">Address Line 2</label>  
+                  <div class="col-md-4">
+                  <input id="Uaddress2" name="Uaddress2" type="text" placeholder="" class="form-control input-md">
+                    
+                  </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Utown">Town</label>  
+                  <div class="col-md-4">
+                  <input id="Utown" name="Utown" type="text" placeholder="" class="form-control input-md">
+                    
+                  </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="UCountyCity">County/City</label>  
+                  <div class="col-md-4">
+                  <input id="UCountyCity" name="UCountyCity" type="text" placeholder="" class="form-control input-md">
+                    
+                  </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="UEircode">Eircode</label>  
+                  <div class="col-md-4">
+                  <input id="UEircode" name="UEircode" type="text" placeholder="" class="form-control input-md">
+                    
+                  </div>
+                </div>
+                
+                </fieldset>
+                </form>
+    
+    
+                <!--Shipping Address Form-->
+                <form id="UShippingAddress">
+                  <fieldset>
+                  
+                  <!-- Form Name -->
+                  <legend>Shipping Address</legend>
+                  
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="Uaddress1">Address Line 1</label>  
+                    <div class="col-md-4">
+                    <input id="USaddress1" name="USaddress1" type="text" placeholder="" class="form-control input-md">
+                      
+                    </div>
+                  </div>
+                  
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="USaddress2">Address Line 2</label>  
+                    <div class="col-md-4">
+                    <input id="USaddress2" name="USaddress2" type="text" placeholder="" class="form-control input-md">
+                      
+                    </div>
+                  </div>
+                  
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="UStown">Town</label>  
+                    <div class="col-md-4">
+                    <input id="UStown" name="UStown" type="text" placeholder="" class="form-control input-md">
+                      
+                    </div>
+                  </div>
+                  
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="USCountyCity">County/City</label>  
+                    <div class="col-md-4">
+                    <input id="USCountyCity" name="USCountyCity" type="text" placeholder="" class="form-control input-md">
+                      
+                    </div>
+                  </div>
+                  
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="USEircode">Eircode</label>  
+                    <div class="col-md-4">
+                    <input id="USEircode" name="USEircode" type="text" placeholder="" class="form-control input-md">
+                      
+                    </div>
+                  </div>
+                  
+                  </fieldset>
+                  </form>
+                  <br>
+                <!-- Shipping Checkboxe -->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="UisShipping">Same Shipping Address</label>
+                  <div class="col-md-4">
+                  <div class="checkbox">
+                    <label for="UisShippingStatus">
+                      <input type="checkbox" name="UisShipping" id="UisShippingStatus" value="1">
+                      yes
+                    </label>
+                  </div>
+                  </div>
+                  <br>
+              <button id="UpdateButton">Update</button>
+          </div>
+          <br>
+          <div id="Delete">
+              <h1>Delete</h1>
+              <form class="form-horizontal">
+                <fieldset>
+                
+                <!-- Form Name -->
+                <legend>Delete Customer</legend>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Demail">Email Address</label>  
+                  <div class="col-md-4">
+                  <input id="Demail" name="Demail" type="text" placeholder="" class="form-control input-md">
+                    
+                  </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Dphone">Phone</label>  
+                  <div class="col-md-4">
+                  <input id="Dphone" name="Dphone" type="text" placeholder="" class="form-control input-md">
+                    
+                  </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Dname">Name</label>  
+                  <div class="col-md-4">
+                  <input id="Dname" name="Dname" type="text" placeholder="" class="form-control input-md">
+                    
+                  </div>
+                </div>
+                
+                </fieldset>
+                </form>
+                <br>
+                <button id="DeleteButton">Delete</button>
+          </div>
+          <script>
+            //Event Shipping address same as Address
+              $('#isShippingStatus').change(function(){
+                  let isChecked = $(this)[0].checked;
+                  if(isChecked){
+                      $('#ShippingAddress').hide();
+                  }
+                  else{
+                      $('#ShippingAddress').show();
+                  }
+              });
+              //Event Shipping address same as Address
+              $('#UisShippingStatus').change(function(){
+                  let isChecked = $(this)[0].checked;
+                  if(isChecked){
+                      $('#UShippingAddress').hide();
+                  }
+                  else{
+                      $('#UShippingAddress').show();
+                  }
+              });
+    
+              //Event Create submit button clicked
+              //Event Create submit button clicked
+              //Create customer and send post request with
+              //Customer Data as json to url below
+              $('#CreateButton').click(function(){
+                let isChecked = $('#isShippingStatus')[0].checked;
+              
+                let address={
+                  AddressLine1: $('#address1').val(),
+                  AddressLine2:$('#address2').val(),
+                  Town:$('#town').val(),
+                  County_City:$('#CountyCity').val(),
+                  Eircode:$('#Eircode').val()
+                }
+                let shipAddress = {
+                  AddressLine1: $('#Saddress1').val(),
+                  AddressLine_2:$('#Saddress2').val(),
+                  Town:$('#Stown').val(),
+                  County_City:$('#SCountyCity').val(),
+                  Eircode:$('#SEircode').val()
+                }
+                let USERdetails = null;
+                if(isChecked){
+                  USERdetails = {
+                      Title: $('#title').val(),
+                      FirstName:$('#firstName').val(),
+                      Surname: $('#surname').val(),
+                      Mobile: $('#mobile').val(),
+                      Email: $('#email').val(),
+                      Address: address,
+                      ShippingAddress: address
+                    }
+                }
+                else{
+                  USERdetails = {
+                      Title: $('#title').val(),
+                      FirstName:$('#firstName').val(),
+                      Surname: $('#surname').val(),
+                      Mobile: $('#mobile').val(),
+                      Email: $('#email').val(),
+                      Address: address,
+                      ShippingAddress: shipAddress
+                    }
+                }
+                console.log(USERdetails);
+                let body = JSON.stringify(USERdetails);
+                $.ajax({
+                  type: "POST",
+                  url: 'http://localhost:5000/customer',
+                  contentType: "application/json",
+                  dataType: 'json',
+                  async: true,
+                  data: body,
+                  success: function (data){
+                    alert(data.responseText);
+                  },
+                  error: function(err){
+                    alert(err.responseText);
+                  }
+                });
+              });
+    
+              //when search button clicked
+              //get name from search box
+              //send as json post request 
+              //to url below
+              $('#RetrieveButton').click(function(){
+              let name = $('#search').val();
+              console.log(name);
+            
+              $.ajax({
+                  type: "GET",
+                  url: 'http://localhost:5000/customer',
+                  async: true,
+                  success: function (data){
+                    $("#searchResultBox").val(JSON.stringify(data,null,2)).trigger('input');                  },
+                  error: function(err){
+                    console.log(err);
+                  }
+                });
+            });
+    
+            //Update request
+            $('#UpdateButton').click(function(){
+              let isChecked = $('#UisShippingStatus')[0].checked;
+              let customerID = $('#UcustomerID').val();
+                
+                let address={
+                  Address_Line_1: $('#Uaddress1').val(),
+                  Address_Line_2:$('#Uaddress2').val(),
+                  Town:$('#Utown').val(),
+                  County_City:$('#UCountyCity').val(),
+                  Eircode:$('#UEircode').val()
+                }
+                let shipAddress = {
+                  Address_Line_1: $('#USaddress1').val(),
+                  Address_Line_2:$('#USaddress2').val(),
+                  Town:$('#UStown').val(),
+                  County_City:$('#USCountyCity').val(),
+                  Eircode:$('#USEircode').val()
+                }
+                let USERdetails = null;
+                if(isChecked){
+                  USERdetails = {
+                    SearchBy:{
+                       _id:customerID
+                    },
+                      Title: $('#Utitle').val(),
+                      Phone: $('#Uphone').val(),
+                      Email: $('#Uemail').val(),
+                      Address: address,
+                      ShippingAddress: address
+                    }
+                }
+                else{
+                  USERdetails = {
+                    SearchBy:{
+                       _id:customerID
+                    },
+                      Title: $('#Utitle').val(),
+                      Phone: $('#Uphone').val(),
+                      Email: $('#Uemail').val(),        
+                      Address: address,
+                      ShippingAddress: shipAddress
+                    }
+                }
+                let body = JSON.stringify(USERdetails);
+                  console.log(JSON.stringify(USERdetails));
+                $.ajax({
+                  type: "PUT",
+                  url: 'http://localhost:5000/customer',
+                  contentType: "application/json",
+                  dataType: 'json',
+                  async: true,
+                  data: body,
+                  success: function (data){
+                    alert(data.responseText);
+                  },
+                  error: function(err){
+                    alert(err.responseText);
+                  }
+                });
+            });
+            $('#DeleteButton').click(function(){
+              let deleteDetails = {
+                name: $('#Dname').val(),
+                Phone: $('#Dphone').val(),
+                Email:$('#Demail').val()
+              }
+              let body = JSON.stringify(deleteDetails);
+              console.log(deleteDetails);
+              $.ajax({
+                  type: "DELETE",
+                  url: 'http://localhost:5000/customer',
+                  contentType: "application/json",
+                  dataType: 'json',
+                  async: true,
+                  data: body,
+                  success: function (data){
+                    alert(data.responseText);
+                  },
+                  error: function(err){
+                    alert(err.responseText);
+                  }
+                });
+            });
+            $("#searchResultBox").on("input",function(){
+              this.style.height = (this.scrollHeight)+"px;overflow-y:hidden;";
+              this.style.height = "auto";
+              this.style.height = (this.scrollHeight)+"px";
+          });
+          </script>
+    </body>
+</html>

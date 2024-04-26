@@ -1,0 +1,17 @@
+graph If{
+    
+    int a where a>0;
+    int b where b>0;
+    int c = 0;
+    start normal state  B0 { }
+    normal state  B1 { c = a; }
+    normal state  B2 { c = b; }
+    trans  t1 { B0 -> B1 where (a>b);}
+    trans  t2 { B0 -> B2 }
+
+    goal { 
+        assert (a>b) => (c==a); //postcondition
+        assert (a<=b) => (c==b);
+        check for 1 reach (B1,B2)
+    }
+}

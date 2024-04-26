@@ -1,0 +1,873 @@
+<!--Tested with Chrome-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    </head>
+    <body>
+        <!-- Resource choice-->
+        <form>
+            <input type="radio" id="studentSelector" name="Selector" value="student">
+            <label for="Selector"> Student</label><br>
+            <input type="radio" id="tutorSelector" name="Selector" value="tutor">
+            <label for="Selector"> Tutor</label><br>
+            <input type="radio" id="tutorialSelector" name="Selector" value="tutorial">
+            <label for="Selector"> Tutorial</label><br><br>
+          </form>
+        <div id = "Tutor">
+                <h1>Tutor</h1>
+                <div id="TutorCreate">
+                    <h1>Create</h1>
+                    <form id="UserPersonal" class="form-horizontal">
+                        <fieldset>
+                        
+                        <!-- Form Name -->
+                        <legend>Personal</legend>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="title">Title</label>  
+                            <div class="col-md-2">
+                                <input id="Tutortitle" name="title" type="text" placeholder="" class="form-control input-md" size= "4";>
+                                
+                            </div>
+                        </div>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="firstName">First Name(s)</label>  
+                            <div class="col-md-4">
+                                <input id="TutorfirstName" name="firstName" type="text" placeholder="" class="form-control input-md">
+                                
+                            </div>
+                        </div>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="surname">Surname</label>  
+                                <div class="col-md-4">
+                            <input id="Tutorsurname" name="surname" type="text" placeholder="" class="form-control input-md">
+                                
+                            </div>
+                        </div>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="mobile">Mobile</label>  
+                            <div class="col-md-4">
+                                <input id="Tutormobile" name="mobile" type="text" placeholder="" class="form-control input-md">
+                                
+                            </div>
+                        </div>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="email">Email Address</label>  
+                            <div class="col-md-4">
+                                <input id="Tutoremail" name="email" type="text" placeholder="" class="form-control input-md">
+                                
+                            </div>
+                        </div>
+                        
+                        </fieldset>
+                        </form>
+                        
+                    <form id="Address">
+                        <fieldset>
+                        
+                        <!-- Form Name -->
+                        <legend>Address</legend>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="address1">Address Line 1</label>  
+                            <div class="col-md-4">
+                                <input id="Tutoraddress1" name="address1" type="text" placeholder="" class="form-control input-md">
+                                
+                            </div>
+                        </div>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="address2">Address Line 2</label>  
+                            <div class="col-md-4">
+                                <input id="Tutoraddress2" name="address2" type="text" placeholder="" class="form-control input-md">
+                                
+                            </div>
+                        </div>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="town">Town</label>  
+                            <div class="col-md-4">
+                                <input id="Tutortown" name="town" type="text" placeholder="" class="form-control input-md">
+                                
+                            </div>
+                        </div>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="County/City">County/City</label>  
+                            <div class="col-md-4">
+                                <input id="TutorCountyCity" name="CountyCity" type="text" placeholder="" class="form-control input-md">
+                                
+                            </div>
+                        </div>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Eircode">Eircode</label>  
+                            <div class="col-md-4">
+                                <input id="TutorEircode" name="Eircode" type="text" placeholder="" class="form-control input-md">
+                                
+                            </div>
+                        </div>
+                        
+                        </fieldset>
+                        </form>
+                        <button id="TutorCreateButton">Submit</button>
+                </div>
+                
+                <!-- Retrieve Form -->
+                <div>
+                <h1>Retrieve</h1>
+                <label>Search Name</label>  
+                    <input id="Tutorsearch"type="text" placeholder="">
+                <br>
+                <table id="TutorSearchResults">
+                    <tr>
+                        <thead>
+                            <th>id</th>
+                            <th>Title</th>
+                            <th>FirstName</th>
+                            <th>Surname</th>
+                            <th>Mobile</th>
+                            <th>Email</th>
+                            <th>AddressLine1</th>
+                            <th>AddressLine2</th>
+                            <th>Town</th>
+                            <th>County/City</th>
+                            <th>Eircode</th>
+                        </thead>
+                        <tbody id = "TutorTableBody">
+
+                        </tbody>
+                    </tr>
+                </table>
+                <button id="TutorRetrieveButton">search</button>
+                <br><br>
+            </div>
+            <br>
+            <br><br>
+            <div id="TutorUpdate">
+                <h1>Update</h1>
+                <br>
+                <label>TutorID</label>  
+                <input id="TutorUID"type="text" placeholder="">
+                <form class="form-horizontal">
+                  <fieldset>
+                  
+                  <!-- Form Name -->
+                <legend>Personal</legend>
+      
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="title">Title</label>  
+                    <div class="col-md-2">
+                        <input id="TutorUtitle" name="title" type="text" placeholder="" class="form-control input-md" size= "4";>
+                        
+                    </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="firstName">First Name(s)</label>  
+                    <div class="col-md-4">
+                        <input id="TutorUfirstName" name="firstName" type="text" placeholder="" class="form-control input-md">
+                        
+                    </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="surname">Surname</label>  
+                        <div class="col-md-4">
+                    <input id="TutorUsurname" name="surname" type="text" placeholder="" class="form-control input-md">
+                        
+                    </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="mobile">Mobile</label>  
+                    <div class="col-md-4">
+                        <input id="TutorUmobile" name="mobile" type="text" placeholder="" class="form-control input-md">
+                        
+                    </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="email">Email Address</label>  
+                    <div class="col-md-4">
+                        <input id="TutorUemail" name="email" type="text" placeholder="" class="form-control input-md">
+                        
+                    </div>
+                </div>
+                
+                </fieldset>
+                </form>
+                <br>
+                <form id="TutorUAddress">
+                  <fieldset>
+                  
+                  <!-- Form Name -->
+                  <legend>Address</legend>
+                  
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="Uaddress1">Address Line 1</label>  
+                    <div class="col-md-4">
+                    <input id="TutorUaddress1" name="Uaddress1" type="text" placeholder="" class="form-control input-md">
+                      
+                    </div>
+                  </div>
+                  
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="Uaddress2">Address Line 2</label>  
+                    <div class="col-md-4">
+                    <input id="TutorUaddress2" name="Uaddress2" type="text" placeholder="" class="form-control input-md">
+                      
+                    </div>
+                  </div>
+                  
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="Utown">Town</label>  
+                    <div class="col-md-4">
+                    <input id="TutorUtown" name="Utown" type="text" placeholder="" class="form-control input-md">
+                      
+                    </div>
+                  </div>
+                  
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="UCountyCity">County/City</label>  
+                    <div class="col-md-4">
+                    <input id="TutorUCountyCity" name="UCountyCity" type="text" placeholder="" class="form-control input-md">
+                      
+                    </div>
+                  </div>
+                  
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="UEircode">Eircode</label>  
+                    <div class="col-md-4">
+                    <input id="TutorUEircode" name="UEircode" type="text" placeholder="" class="form-control input-md">
+                      
+                    </div>
+                  </div>
+                  
+                  </fieldset>
+                  </form>
+      
+      
+                  
+                    <br>
+                <button id="TutorUpdateButton">Update</button>
+            </div>
+            <div id="TutorDelete">
+                <h1>Delete</h1>
+          <form class="form-horizontal">
+            <fieldset>
+            
+            <!-- Form Name -->
+            <legend>Delete Tutor</legend>
+           
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="Dname">TutorID</label>  
+              <div class="col-md-4">
+                <input id="TutorDID" name="Dname" type="text" placeholder="" class="form-control input-md">
+                
+              </div>
+            </div>
+            
+            </fieldset>
+            </form>
+            <br>
+            <button id="TutorDeleteButton">Delete</button>
+            </div>
+        </div>
+        <div id="Student">
+                <h1>Student</h1>
+                <div id="StudentCreate">
+                    <h1>Create</h1>
+                    <form id="UserPersonal" class="form-horizontal">
+                        <fieldset>
+                        
+                        <!-- Form Name -->
+                        <legend>Personal</legend>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="title">Title</label>  
+                            <div class="col-md-2">
+                                <input id="Studenttitle" name="title" type="text" placeholder="" class="form-control input-md" size= "4";>
+                                
+                            </div>
+                        </div>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="firstName">First Name(s)</label>  
+                            <div class="col-md-4">
+                                <input id="StudentfirstName" name="firstName" type="text" placeholder="" class="form-control input-md">
+                                
+                            </div>
+                        </div>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="surname">Surname</label>  
+                                <div class="col-md-4">
+                            <input id="Studentsurname" name="surname" type="text" placeholder="" class="form-control input-md">
+                                
+                            </div>
+                        </div>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="mobile">Mobile</label>  
+                            <div class="col-md-4">
+                                <input id="Studentmobile" name="mobile" type="text" placeholder="" class="form-control input-md">
+                                
+                            </div>
+                        </div>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="email">Email Address</label>  
+                            <div class="col-md-4">
+                                <input id="Studentemail" name="email" type="text" placeholder="" class="form-control input-md">
+                                
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="email">Date of Birth</label>  
+                            <div class="col-md-4">
+                                <input id="StudentDOB" name="email" type="date" min="1960-01-01" max="2010-01-01" placeholder="" class="form-control input-md">
+                                
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="email">Parent Guardian</label>  
+                            <div class="col-md-4">
+                                <input id="StudentParent" name="Parent" type="text" placeholder="" class="form-control input-md">
+                                
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="email">Virtual Permission</label>  
+                            <div class="col-md-4">
+                                <label for="StudentVirtualYes">Yes</label>
+                                <input id="StudentVirtualYes" name="Virtual" type="radio" value="true" class="form-control input-md">
+                                <label for="StudentVirtualNo">No</label>
+                                <input id="StudentVirtualNo" name="Virtual" type="radio" value="false" class="form-control input-md">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="email">Gender</label>  
+                            <div class="col-md-4">
+                                <input id="StudentGender" name="email" type="text" placeholder="" class="form-control input-md">
+                                
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="email">Subject</label>  
+                            <div class="col-md-4">
+                                <input id="Studentsubject" name="email" type="text" placeholder="" class="form-control input-md">
+                                
+                            </div>
+                        </div>
+                        
+                        </fieldset>
+                        </form>
+                        
+                    <form id="Address">
+                        <fieldset>
+                        
+                        <!-- Form Name -->
+                        <legend>Address</legend>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="address1">Address Line 1</label>  
+                            <div class="col-md-4">
+                                <input id="Studentaddress1" name="address1" type="text" placeholder="" class="form-control input-md">
+                                
+                            </div>
+                        </div>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="address2">Address Line 2</label>  
+                            <div class="col-md-4">
+                                <input id="Studentaddress2" name="address2" type="text" placeholder="" class="form-control input-md">
+                                
+                            </div>
+                        </div>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="town">Town</label>  
+                            <div class="col-md-4">
+                                <input id="Studenttown" name="town" type="text" placeholder="" class="form-control input-md">
+                                
+                            </div>
+                        </div>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="County/City">County/City</label>  
+                            <div class="col-md-4">
+                                <input id="StudentCountyCity" name="CountyCity" type="text" placeholder="" class="form-control input-md">
+                                
+                            </div>
+                        </div>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Eircode">Eircode</label>  
+                            <div class="col-md-4">
+                                <input id="StudentEircode" name="Eircode" type="text" placeholder="" class="form-control input-md">
+                                
+                            </div>
+                        </div>
+                        
+                        </fieldset>
+                        </form>
+                        <button id="StudentCreateButton">Submit</button>
+                </div>
+                
+                <!-- Retrieve Form -->
+                <div>
+                <h1>Retrieve</h1>
+                <label>Search Name</label>  
+                    <input id="Studentsearch"type="text" placeholder="">
+                <br>
+                <table id="StudentSearchResults">
+                    <tr>
+                        <thead>
+                            <th>id</th>
+                            <th>Title</th>
+                            <th>FirstName</th>
+                            <th>Surname</th>
+                            <th>Mobile</th>
+                            <th>Email</th>
+                            <th>DateOfBirth</th>
+                            <th>Parent/Guardian</th>
+                            <th>Virtual Permission</th>
+                            <th>Gender</th>
+                            <th>Subject</th>
+                            <th>AddressLine1</th>
+                            <th>AddressLine2</th>
+                            <th>Town</th>
+                            <th>County/City</th>
+                            <th>Eircode</th>
+                        </thead>
+                        <tbody id = "StudentTableBody">
+
+                        </tbody>
+                    </tr>
+                </table>
+                <button id="StudentRetrieveButton">search</button>
+                <br><br>
+            </div>
+            <br>
+            <br><br>
+            <div id="StudentUpdate">
+                <h1>Update</h1>
+                <br>
+                <label>StudentID</label>  
+                <input id="StudentUID"type="text" placeholder="">
+                <form class="form-horizontal">
+                <fieldset>
+                
+                <!-- Form Name -->
+                <legend>Personal</legend>
+    
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="title">Title</label>  
+                    <div class="col-md-2">
+                        <input id="StudentUtitle" name="title" type="text" placeholder="" class="form-control input-md" size= "4";>
+                        
+                    </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="firstName">First Name(s)</label>  
+                    <div class="col-md-4">
+                        <input id="StudentUfirstName" name="firstName" type="text" placeholder="" class="form-control input-md">
+                        
+                    </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="surname">Surname</label>  
+                        <div class="col-md-4">
+                    <input id="StudentUsurname" name="surname" type="text" placeholder="" class="form-control input-md">
+                        
+                    </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="mobile">Mobile</label>  
+                    <div class="col-md-4">
+                        <input id="StudentUmobile" name="mobile" type="text" placeholder="" class="form-control input-md">
+                        
+                    </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="email">Email Address</label>  
+                    <div class="col-md-4">
+                        <input id="StudentUemail" name="email" type="text" placeholder="" class="form-control input-md">
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="email">Date of Birth</label>  
+                    <div class="col-md-4">
+                        <input id="StudentUDOB" name="email" type="date" min="1960-01-01" max="2010-01-01" placeholder="" class="form-control input-md">
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="email">Parent Guardian</label>  
+                    <div class="col-md-4">
+                        <input id="StudentUParent" name="Parent" type="text" placeholder="" class="form-control input-md">
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="email">Virtual Permission</label>  
+                    <div class="col-md-4">
+                        <label for="StudentUVirtualYes">Yes</label>
+                        <input id="StudentUVirtualYes" name="UVirtual" type="radio" value="true" class="form-control input-md">
+                        <label for="StudentUVirtualNo">No</label>
+                        <input id="StudentUVirtualNo" name="UVirtual" type="radio" value="false" class="form-control input-md">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="email">Gender</label>  
+                    <div class="col-md-4">
+                        <input id="StudentUGender" name="email" type="text" placeholder="" class="form-control input-md">
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="email">Subject</label>  
+                    <div class="col-md-4">
+                        <input id="StudentUsubject" name="email" type="text" placeholder="" class="form-control input-md">
+                        
+                    </div>
+                </div>
+                
+                </fieldset>
+                </form>
+                <br>
+                <form id="StudentUAddress">
+                <fieldset>
+                
+                <!-- Form Name -->
+                <legend>Address</legend>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="Uaddress1">Address Line 1</label>  
+                    <div class="col-md-4">
+                    <input id="StudentUaddress1" name="Uaddress1" type="text" placeholder="" class="form-control input-md">
+                    
+                    </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="Uaddress2">Address Line 2</label>  
+                    <div class="col-md-4">
+                    <input id="StudentUaddress2" name="Uaddress2" type="text" placeholder="" class="form-control input-md">
+                    
+                    </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="Utown">Town</label>  
+                    <div class="col-md-4">
+                    <input id="StudentUtown" name="Utown" type="text" placeholder="" class="form-control input-md">
+                    
+                    </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="UCountyCity">County/City</label>  
+                    <div class="col-md-4">
+                    <input id="StudentUCountyCity" name="UCountyCity" type="text" placeholder="" class="form-control input-md">
+                    
+                    </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="UEircode">Eircode</label>  
+                    <div class="col-md-4">
+                    <input id="StudentUEircode" name="UEircode" type="text" placeholder="" class="form-control input-md">
+                    
+                    </div>
+                </div>
+                
+                </fieldset>
+                </form>
+    
+    
+                
+                    <br>
+                <button id="StudentUpdateButton">Update</button>
+            </div>
+            <div id="StudentDelete">
+                <h1>Delete</h1>
+        <form class="form-horizontal">
+            <fieldset>
+            
+            <!-- Form Name -->
+            <legend>Delete Student</legend>
+        
+            <div class="form-group">
+            <label class="col-md-4 control-label" for="Dname">StudentID</label>  
+            <div class="col-md-4">
+                <input id="StudentDID" name="Dname" type="text" placeholder="" class="form-control input-md">
+                
+            </div>
+            </div>
+            
+            </fieldset>
+            </form>
+            <br>
+            <button id="StudentDeleteButton">Delete</button>
+            </div>
+        </div>
+        <div id="Tutorial">
+            <h1>Tutorial</h1>
+            <div id="TutorialCreate">
+                <h1>Create</h1>
+                <form id="UserPersonal" class="form-horizontal">
+                    <fieldset>
+                    
+                    <!-- Form Name -->
+                    <legend>Tutorial</legend>
+                    
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="Date">Tutorial Date</label>  
+                        <div class="col-md-4">
+                            <input id="TutorialDate" name="TutorialDate" type="date" min="2022-01-01" max="2024-01-01" placeholder="" class="form-control input-md">
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="surname">Time .i.e 00:00</label>  
+                            <div class="col-md-4">
+                        <input id="TutorialTime" name="Time" type="text" placeholder="" class="form-control input-md">
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="mobile">Students .i.e student1ID,student2ID etc</label>  
+                        <div class="col-md-4">
+                            <input id="Students" name="mobile" type="text" placeholder="" class="form-control input-md">
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="email">Tutor i.e. tutorID</label>  
+                        <div class="col-md-4">
+                            <input id="TutorialTutor" name="email" type="text" placeholder="" class="form-control input-md">
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="Fee">Fee</label>  
+                        <div class="col-md-4">
+                            <input id="TutorialFee" name="email" type="text" placeholder="" class="form-control input-md">
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="email">TutorialAttendence</label>  
+                        <div class="col-md-4">
+                            <input id="TutorialAttendence" name="TutorialAttendence" type="text" placeholder="" class="form-control input-md">
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="TutorialSubject">TutorialSubject</label>  
+                        <div class="col-md-4">
+                            <input id="TutorialSubject" name="TutorialSubject" type="text" placeholder="" class="form-control input-md">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="TutorialSubject">TutorialNotes</label>  
+                        <div class="col-md-4">
+                            <textarea id="TutorialNotes" name="TutorialNotes" type="text" class="form-control input-md"></textarea>
+                        </div>
+                    </div>
+                    </fieldset>
+                    </form>
+                    
+                
+                    <button id="TutorialCreateButton">Submit</button>
+            </div>
+            <div>
+                <h1>Retrieve</h1>
+                <label>Search Name</label>  
+                    <input id="TutorialSearch"type="text" placeholder="">
+                <br>
+                <table id="TutorialSearchResults">
+                    <tr>
+                        <thead>
+                            <th>Tutorial Number</th>
+                            <th>Tutorial Date</th>
+                            <th>Time</th>
+                            <th>Students</th>
+                            <th>Tutor</th>
+                            <th>Fee</th>
+                            <th>TutorialAttendence</th>
+                            <th>TutorialSubject</th>
+                            <th>Tutorial Notes</th>
+                        </thead>
+                        <tbody id = "TutorialTableBody">
+
+                        </tbody>
+                    </tr>
+                </table>
+                <button id="TutorialRetrieveButton">search</button>
+                <br><br>
+            </div>
+            <br>
+            <br><br>
+            <div id="TutorialUpdate">
+                <h1>Update</h1>
+                <form id="UserPersonal" class="form-horizontal">
+                    <fieldset>
+                    
+                    <!-- Form Name -->
+                    <legend>Tutorial</legend>
+                    <label>TutorID</label>  
+                    <input id="TutorialUID"type="text" placeholder="">
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="Date">Tutorial Date</label>  
+                        <div class="col-md-4">
+                            <input id="UDate" name="TutorialDate" type="date" min="2022-01-01" max="2024-01-01" placeholder="" class="form-control input-md">
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="surname">Time .i.e 00:00</label>  
+                            <div class="col-md-4">
+                        <input id="UTime" name="Time" type="text" placeholder="" class="form-control input-md">
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="mobile">Students .i.e student1ID,student2ID etc</label>  
+                        <div class="col-md-4">
+                            <input id="UStudents" name="mobile" type="text" placeholder="" class="form-control input-md">
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="email">Tutor i.e. tutorID</label>  
+                        <div class="col-md-4">
+                            <input id="UTutorialTutor" name="email" type="text" placeholder="" class="form-control input-md">
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="Fee">Fee</label>  
+                        <div class="col-md-4">
+                            <input id="UFee" name="email" type="text" placeholder="" class="form-control input-md">
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="email">TutorialAttendence</label>  
+                        <div class="col-md-4">
+                            <input id="UTutorialAttendence" name="TutorialAttendence" type="text" placeholder="" class="form-control input-md">
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="TutorialSubject">TutorialSubject</label>  
+                        <div class="col-md-4">
+                            <input id="UTutorialSubject" name="TutorialSubject" type="text" placeholder="" class="form-control input-md">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="TutorialSubject">TutorialNotes</label>  
+                        <div class="col-md-4">
+                            <input id="UTutorialNotes" name="TutorialNotes" type="text" placeholder="" class="form-control input-md">
+                        </div>
+                    </div>
+                    </fieldset>
+                    </form>
+                    
+                
+                    <button id="TutorialUpdateButton">Submit</button>
+            </div>
+            <div id="TutorDelete">
+                <h1>Delete</h1>
+                <form class="form-horizontal">
+                    <fieldset>
+                    
+                    <!-- Form Name -->
+                    <legend>Delete Tutorial</legend>
+                
+                    <div class="form-group">
+                    <label class="col-md-4 control-label" for="Dname">TutorialID</label>  
+                    <div class="col-md-4">
+                        <input id="TutorialDID" name="Dname" type="text" placeholder="" class="form-control input-md">
+                        
+                    </div>
+                    </div>
+                    
+                    </fieldset>
+                    </form>
+                    <br>
+                    <button id="TutorialDeleteButton">Delete</button>
+                    </div>
+            </div>
+      <script src="script.js"></script>
+    </body>
+</html>

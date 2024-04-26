@@ -1,0 +1,129 @@
+Customer Records in database
+[
+    {
+        "Address": {
+            "AddressLine1": "27 corbally glade",
+            "AddressLine2": "test",
+            "Town": "Citywest",
+            "County_City": "test",
+            "Eircode": "test"
+        },
+        "ShippingAddress": {
+            "AddressLine1": "27 corbally glade",
+            "AddressLine2": "",
+            "Town": "Citywest",
+            "County_City": "Dublin",
+            "Eircode": "D25 6850"
+        },
+        "_id": "643165c6752423f3926a984d",
+        "FirstName": "Brian",
+        "Surname": "Manesis",
+        "Mobile": "09584733",
+        "Email": "manesis@gmail.com",
+        "__v": 0,
+        "Title": "Mr"
+    },
+    {
+        "Address": {
+            "AddressLine1": "11 sun lane",
+            "AddressLine2": "",
+            "Town": "London",
+            "County_City": "London",
+            "Eircode": "L24 HGDA"
+        },
+        "ShippingAddress": {
+            "AddressLine1": "14 corbally heath",
+            "AddressLine2": "",
+            "Town": "Citywest",
+            "County_City": "Dublin",
+            "Eircode": "D24 KADY"
+        },
+        "_id": "6436ca1bfb26667218b45319",
+        "Title": "Mrs",
+        "FirstName": "Aoife",
+        "Surname": "Harrison",
+        "Mobile": "1234567",
+        "Email": "aoifeH@gmail.com",
+        "__v": 0
+    },
+    {
+        "Address": {
+            "AddressLine1": "13 cresent park",
+            "AddressLine2": "Austin",
+            "Town": "Austin",
+            "County_City": "Texas",
+            "Eircode": ""
+        },
+        "ShippingAddress": {
+            "AddressLine1": "13 cresent park",
+            "AddressLine2": "Austin",
+            "Town": "Austin",
+            "County_City": "Texas",
+            "Eircode": "TX3 I750"
+        },
+        "_id": "643821674f02c322d543f8d3",
+        "Title": "Dr",
+        "FirstName": "Michelle",
+        "Surname": "Murphy",
+        "Mobile": "314159",
+        "Email": "michelle@gmail.com",
+        "__v": 0
+    }
+]
+
+Phone records in database
+[
+    {
+        "_id": "64316b0030792b2fb64d4684",
+        "Manufacturer": "Nokia",
+        "Model": "Blokia 10",
+        "Price": "300",
+        "__v": 0
+    },
+    {
+        "_id": "64316b1930792b2fb64d4686",
+        "Manufacturer": "Apple",
+        "Model": "Iphone 13",
+        "Price": "1300",
+        "__v": 0
+    },
+    {
+        "_id": "64382a01424cb00f58a6e95f",
+        "Manufacturer": "Samsung",
+        "Model": "Galaxy 10",
+        "Price": "900",
+        "__v": 0
+    },
+    {
+        "_id": "64383cdf2ee45f2f6c4b55f1",
+        "Manufacturer": "Apple",
+        "Model": "Iphone 10",
+        "Price": "800",
+        "__v": 0
+    }
+]
+
+Order records in database
+[
+    {
+        "_id": "64382a5f424cb00f58a6e966",
+        "customer": "6436ca1bfb26667218b45319",
+        "order": [
+            "64316b1930792b2fb64d4686",
+            "64316b0030792b2fb64d4684"
+        ],
+        "__v": 1
+    },
+    {
+        "_id": "64382ab6424cb00f58a6e968",
+        "customer": "6436ca1bfb26667218b45319",
+        "order": [
+            "643bde7f832ce8c1a222fadc",
+            "643bde7f832ce8c1a222fadc",
+            "64316b1930792b2fb64d4686",
+            "643bde7f832ce8c1a222fadc",
+            "643bde7f832ce8c1a222fadc"
+        ],
+        "__v": 2
+    }
+]

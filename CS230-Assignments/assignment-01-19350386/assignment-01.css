@@ -1,0 +1,65 @@
+
+.Heading{
+    text-align: center;
+    font-style: oblique;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height:20vh
+}
+.pyramid{
+    margin: auto;
+    text-align: center;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    width: 70vh;
+    height: 70vh;
+    
+}
+#Shelf1 {
+    background-color: red;
+    height: 15vh;
+}
+#Shelf2 {
+    background-color: orange;
+    height: 10vh;
+}
+#Shelf3 {
+    background-color: yellow;
+    height: 10vh;
+}
+#Shelf4 {
+    background-color: blue;
+    height: 10vh;
+}
+#Shelf5 {
+    background-color: rgb(95, 45, 45);
+    height: 10vh;
+}
+#Shelf6 {
+    background-color: green;
+    height: 10vh;
+}
+
+button{
+    font-size: 2vmin;
+    border-radius: 50%;
+}
+.s1{
+    display:none;
+}
+#Shelf1:hover .s1{
+    display: initial;
+}
+#Shelf2:hover .s1{
+    display: initial;
+}
+#Shelf3:hover .s1{
+    display: initial;
+}
+#Shelf4:hover .s1{
+    display: initial;
+}
+#Shelf5:hover .s1{
+    display: initial;
+}
+#Shelf6:hover .s1{
+    display: initial;
+}

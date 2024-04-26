@@ -1,0 +1,358 @@
+<!-- All forms made from bootsnip form builder-->
+<!-- Tested on Google Chrome -->
+<!DOCTYPE html>
+<html>
+    <head>
+     <style>
+        /*
+          All styling found or inspired from w3schools
+        */
+
+      body{
+          font-family: Arial, Helvetica, sans-serif;
+          background-color: #f2f2f2;
+      }
+      input[type=text]{
+          width: 30%;
+          padding: 8px ;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+      label{
+          font-family: Arial, Helvetica, sans-serif;
+      }
+      #title{
+          width: 10%;
+          padding: 5px ;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+      }
+      div {
+          border-radius: 5px;
+          padding: 5px;
+        }
+        button{
+          background-color: #4CAF50; 
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+        }
+        button:active {
+          background-color: #3e8e41;
+          box-shadow: 0 5px #666;
+          transform: translateY(4px);
+        }
+        textarea{
+          width: 50%;
+        }
+     </style>
+      <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    </head>
+
+    <!-- Create Form -->
+    <body>
+        <h1>Create</h1>
+        <div>
+            <form id="UserPersonal" class="form-horizontal">
+                <fieldset>
+                
+                <!-- Form Name -->
+                <legend>Personal</legend>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="title">Title</label>  
+                  <div class="col-md-2">
+                  <input id="title" name="title" type="text" placeholder="" class="form-control input-md" size= "4";>
+                    
+                  </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="firstName">First Name(s)</label>  
+                  <div class="col-md-4">
+                  <input id="firstName" name="firstName" type="text" placeholder="" class="form-control input-md">
+                    
+                  </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="surname">Surname</label>  
+                  <div class="col-md-4">
+                  <input id="surname" name="surname" type="text" placeholder="" class="form-control input-md">
+                    
+                  </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="mobile">Mobile</label>  
+                  <div class="col-md-4">
+                  <input id="mobile" name="mobile" type="text" placeholder="" class="form-control input-md">
+                    
+                  </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="email">Email Address</label>  
+                  <div class="col-md-4">
+                  <input id="email" name="email" type="text" placeholder="" class="form-control input-md">
+                    
+                  </div>
+                </div>
+                
+                </fieldset>
+                </form>
+                
+            <form id="Address">
+                <fieldset>
+                
+                <!-- Form Name -->
+                <legend>Address</legend>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="address1">Address Line 1</label>  
+                  <div class="col-md-4">
+                  <input id="address1" name="address1" type="text" placeholder="" class="form-control input-md">
+                    
+                  </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="address2">Address Line 2</label>  
+                  <div class="col-md-4">
+                  <input id="address2" name="address2" type="text" placeholder="" class="form-control input-md">
+                    
+                  </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="town">Town</label>  
+                  <div class="col-md-4">
+                  <input id="town" name="town" type="text" placeholder="" class="form-control input-md">
+                    
+                  </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="County/City">County/City</label>  
+                  <div class="col-md-4">
+                  <input id="CountyCity" name="CountyCity" type="text" placeholder="" class="form-control input-md">
+                    
+                  </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Eircode">Eircode</label>  
+                  <div class="col-md-4">
+                  <input id="Eircode" name="Eircode" type="text" placeholder="" class="form-control input-md">
+                    
+                  </div>
+                </div>
+                
+                </fieldset>
+                </form>
+
+
+                <!--Shipping Address Form-->
+                <form id="ShippingAddress">
+                  <fieldset>
+                  
+                  <!-- Form Name -->
+                  <legend>Shipping Address</legend>
+                  
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="address1">Address Line 1</label>  
+                    <div class="col-md-4">
+                    <input id="Saddress1" name="address1" type="text" placeholder="" class="form-control input-md">
+                      
+                    </div>
+                  </div>
+                  
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="address2">Address Line 2</label>  
+                    <div class="col-md-4">
+                    <input id="Saddress2" name="address2" type="text" placeholder="" class="form-control input-md">
+                      
+                    </div>
+                  </div>
+                  
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="town">Town</label>  
+                    <div class="col-md-4">
+                    <input id="Stown" name="town" type="text" placeholder="" class="form-control input-md">
+                      
+                    </div>
+                  </div>
+                  
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="County/City">County/City</label>  
+                    <div class="col-md-4">
+                    <input id="SCountyCity" name="CountyCity" type="text" placeholder="" class="form-control input-md">
+                      
+                    </div>
+                  </div>
+                  
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="Eircode">Eircode</label>  
+                    <div class="col-md-4">
+                    <input id="SEircode" name="Eircode" type="text" placeholder="" class="form-control input-md">
+                      
+                    </div>
+                  </div>
+                  
+                  </fieldset>
+                  </form>
+                  <br>
+                <!-- Shipping Checkboxe -->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="isShipping">Same Shipping Address</label>
+                  <div class="col-md-4">
+                  <div class="checkbox">
+                    <label for="isShippingStatus">
+                      <input type="checkbox" name="isShipping" id="isShippingStatus" value="1">
+                      yes
+                    </label>
+                  </div>
+                  </div>
+                  <button id="CreateButton">submit</button>
+        </div>
+        <!-- Retrieve Form -->
+        <div>
+          <h1>Retrieve</h1>
+          <label>Search Name</label>  
+            <input id="search"type="text" placeholder="">
+          <br>
+          <table id="SearchResults"></table>
+          <button id="RetrieveButton">search</button>
+          <br><br>
+          <textarea id="searchResultBox"></textarea>
+      </div>
+      <br>
+      <script>
+        //Event Shipping address same as Address
+          $('#isShippingStatus').change(function(){
+              let isChecked = $(this)[0].checked;
+              if(isChecked){
+                  $('#ShippingAddress').hide();
+              }
+              else{
+                  $('#ShippingAddress').show();
+              }
+          });
+
+          //Event Create submit button clicked
+          //Create customer and send post request with
+          //Customer Data as json to url below
+          $('#CreateButton').click(function(){
+            let isChecked = $('#isShippingStatus')[0].checked;
+            let personal = {
+              Title: $('#title').val(),
+              FirstName:$('#firstName').val(),
+              SurName: $('#surname').val(),
+              Mobile: $('#mobile').val(),
+              EmailAddress: $('#email').val()
+            }
+            let address={
+              Address_Line_1: $('#address1').val(),
+              Address_Line_2:$('#address2').val(),
+              Town:$('#town').val(),
+              County_City:$('#CountyCity').val(),
+              Eircode:$('#Eircode').val()
+            }
+            let shipAddress = {
+              Address_Line_1: $('#Saddress1').val(),
+              Address_Line_2:$('#Saddress2').val(),
+              Town:$('#Stown').val(),
+              County_City:$('#SCountyCity').val(),
+              Eircode:$('#SEircode').val()
+            }
+            let USERdetails = null;
+            if(isChecked){
+              USERdetails = {
+                  Personal: personal,
+                  Address: address,
+                  ShippingAddress: address
+                }
+            }
+            else{
+              USERdetails = {
+                  Personal: personal,
+                  Address: address,
+                  ShippingAddress: shipAddress
+                }
+            }
+            let body = JSON.stringify(USERdetails);
+              console.log(JSON.stringify(USERdetails));
+            $.ajax({
+              type: "POST",
+              url: 'http://localhost:5000/create',
+              contentType: "application/json",
+              dataType: 'json',
+              async: true,
+              data: body,
+              success: function (data){
+                alert(data.responseText);
+              },
+              error: function(err){
+                alert(err.responseText);
+              }
+            });
+          });
+
+          //when search button clicked
+          //get name from search box
+          //send as json post request 
+          //to url below
+        $('#RetrieveButton').click(function(){
+          let name = {Name:$('#search').val()};
+          console.log(name);
+        
+          $.ajax({
+              type: "POST",
+              url: 'http://localhost:5000/retrieve',
+              contentType: "application/json",
+              dataType: 'json',
+              async: true,
+              data: JSON.stringify(name),
+              success: function (data){
+                $("#searchResultBox").val(JSON.stringify(data,null,2)).trigger('input');
+              },
+              error: function(err){
+                console.log(err);
+              }
+            });
+        });
+
+        //resize the result box as seen in lecture
+      $("#searchResultBox").on("input",function(){
+          this.style.height = (this.scrollHeight)+"px;overflow-y:hidden;";
+          this.style.height = "auto";
+          this.style.height = (this.scrollHeight)+"px";
+      });
+      </script>
+    </body>
+</html>

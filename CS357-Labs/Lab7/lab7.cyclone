@@ -1,0 +1,57 @@
+graph G{
+    abstract start node S {}
+    abstract final node A {}
+    abstract final node B {}
+    abstract final node C {}
+    abstract final node D {}
+    abstract final node E {}
+    abstract final node F {}
+    abstract final node G {}
+    abstract final node H {}
+    abstract final node I {}
+    abstract final node J {}
+
+    edge { S-> + }
+    edge { A <-> B,C,F}
+    edge { B <-> G,D}
+    edge { D <-> I,E}
+    edge { E <-> J,C}
+    edge { C <-> H}
+    edge { F <-> I,J}
+    edge { G <-> H,J}
+    edge { I <-> H}
+
+    goal{
+        let cycle1 = >>(S->A) && (<<A) && (B^{1}) && (C^{1}) && (D^{1}) && (E^{1}) && (F^{1}) && (G^{1}) && (H^{1}) && (I^{1}) && (J^{1});
+        let cycle2 = >>(S->B) && (<<B) && (A^{1}) && (C^{1}) && (D^{1}) && (E^{1}) && (F^{1}) && (G^{1}) && (H^{1}) && (I^{1}) && (J^{1});
+        let cycle3 = >>(S->C) && (<<C) && (B^{1}) && (A^{1}) && (D^{1}) && (E^{1}) && (F^{1}) && (G^{1}) && (H^{1}) && (I^{1}) && (J^{1});
+        let cycle4 = >>(S->D) && (<<D) && (B^{1}) && (C^{1}) && (A^{1}) && (E^{1}) && (F^{1}) && (G^{1}) && (H^{1}) && (I^{1}) && (J^{1});
+        let cycle5 = >>(S->E) && (<<E) && (B^{1}) && (C^{1}) && (D^{1}) && (A^{1}) && (F^{1}) && (G^{1}) && (H^{1}) && (I^{1}) && (J^{1});
+        let cycle6 = >>(S->F) && (<<F) && (B^{1}) && (C^{1}) && (D^{1}) && (E^{1}) && (A^{1}) && (G^{1}) && (H^{1}) && (I^{1}) && (J^{1});
+        let cycle7 = >>(S->G) && (<<G) && (B^{1}) && (C^{1}) && (D^{1}) && (E^{1}) && (F^{1}) && (A^{1}) && (H^{1}) && (I^{1}) && (J^{1});
+        let cycle8 = >>(S->H) && (<<H) && (B^{1}) && (C^{1}) && (D^{1}) && (E^{1}) && (F^{1}) && (G^{1}) && (A^{1}) && (I^{1}) && (J^{1});
+        let cycle9 = >>(S->I) && (<<I) && (B^{1}) && (C^{1}) && (D^{1}) && (E^{1}) && (F^{1}) && (G^{1}) && (H^{1}) && (A^{1}) && (J^{1});
+        let cycle10 = >>(S->J) && (<<J) && (B^{1}) && (C^{1}) && (D^{1}) && (E^{1}) && (F^{1}) && (G^{1}) && (H^{1}) && (I^{1}) && (A^{1});
+        let cycle = cycle1 || cycle2 || cycle3 ||  cycle4 ||  cycle5 ||  cycle6 || cycle7 || cycle8 || cycle9 || cycle10;
+
+        let path1 = >>(S->A) && (A^{1}) && (B^{1}) && (C^{1}) && (D^{1}) && (E^{1}) && (F^{1}) && (G^{1}) && (H^{1}) && (I^{1}) && (J^{1});
+        let path2 = >>(S->B) && (A^{1}) && (B^{1}) && (C^{1}) && (D^{1}) && (E^{1}) && (F^{1}) && (G^{1}) && (H^{1}) && (I^{1}) && (J^{1});
+        let path3 = >>(S->C) && (A^{1}) && (B^{1}) && (C^{1}) && (D^{1}) && (E^{1}) && (F^{1}) && (G^{1}) && (H^{1}) && (I^{1}) && (J^{1});
+        let path4 = >>(S->D) && (A^{1}) && (B^{1}) && (C^{1}) && (D^{1}) && (E^{1}) && (F^{1}) && (G^{1}) && (H^{1}) && (I^{1}) && (J^{1});
+        let path5 = >>(S->E) && (A^{1}) && (B^{1}) && (C^{1}) && (D^{1}) && (E^{1}) && (F^{1}) && (G^{1}) && (H^{1}) && (I^{1}) && (J^{1});
+        let path6 = >>(S->F) && (A^{1}) && (B^{1}) && (C^{1}) && (D^{1}) && (E^{1}) && (F^{1}) && (G^{1}) && (H^{1}) && (I^{1}) && (J^{1});
+        let path7 = >>(S->G) && (A^{1}) && (B^{1}) && (C^{1}) && (D^{1}) && (E^{1}) && (F^{1}) && (G^{1}) && (H^{1}) && (I^{1}) && (J^{1});
+        let path8 = >>(S->H) && (A^{1}) && (B^{1}) && (C^{1}) && (D^{1}) && (E^{1}) && (F^{1}) && (G^{1}) && (H^{1}) && (I^{1}) && (J^{1});
+        let path9 = >>(S->I) && (A^{1}) && (B^{1}) && (C^{1}) && (D^{1}) && (E^{1}) && (F^{1}) && (G^{1}) && (H^{1}) && (I^{1}) && (J^{1});
+        let path10 = >>(S->J) && (A^{1}) && (B^{1}) && (C^{1}) && (D^{1}) && (E^{1}) && (F^{1}) && (G^{1}) && (H^{1}) && (I^{1}) && (J^{1});
+        let path = path1 || path2 || path3 || path4 || path5 || path6 || path7 || path8 || path9 || path10;
+
+        // Checks for hamiltonian cycle
+        check for 10 condition (cycle)
+
+        // Checks for hamiltonian path
+        //check for 10 condition (path)
+
+    }
+
+}

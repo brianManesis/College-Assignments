@@ -1,0 +1,26 @@
+
+graph Q3{    
+    real cost = 0.0;
+    start abstract node Start{}
+    normal final node mixedfruit { cost = cost + 2.15;}
+    normal final node frenchfries {cost = cost + 2.75;}
+    normal final node sidesalad {cost = cost + 3.35;}
+    normal final node hotwings {cost = cost + 3.55;}
+    normal final node mozzsticks {cost = cost + 4.20;}
+    normal final node samplerplate {cost = cost + 5.80;}
+
+    edge   { Start -> *}
+    edge   { mixedfruit -> *}
+    edge   { frenchfries -> *}
+    edge   { sidesalad -> *}
+    edge   { hotwings -> *}
+    edge   { mozzsticks -> *}
+    edge   { samplerplate -> *}
+
+    goal { 
+        assert (cost == 15.05);
+        // check for 7 condition (Start^{1} && mixedfruit^{1} && frenchfries^{1}
+        //  && sidesalad^{1} && hotwings^{1} && mozzsticks^{1} && samplerplate^{1})
+        check for 1,2,3,4,5,6,7,8 condition (Start^{1})
+    }
+}
